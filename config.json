@@ -1,0 +1,621 @@
+{
+  "info": {
+    "platform": "AutoDL",
+    "version": "0.0.6"
+  },
+  "presets": {
+    "SMALL": {
+      "x_encoder": {
+        "layers": [
+          128,
+          128,
+          128,
+          128,
+          64,
+          64,
+          64,
+          64
+        ],
+        "bottleneck": 3,
+        "to_bottleneck_activation": "Linear"
+      },
+      "x_reconstructor": [
+        64,
+        64,
+        64,
+        64,
+        128,
+        128,
+        128,
+        128
+      ],
+      "x_reconstructor_output_activation": "ReLU",
+      "y_encoder": {
+        "bottleneck": 3,
+        "cnn_hidden": [
+          64,
+          64,
+          64,
+          64
+        ],
+        "cnn_out": 160,
+        "transformer_stage_dims": [
+          64,
+          64,
+          64,
+          64
+        ]
+      },
+      "y_predict_up": {
+        "cnn_hidden": [
+          64,
+          64,
+          64,
+          64
+        ],
+        "cnn_in": 160,
+        "transformer_stage_dims": [
+          64,
+          64,
+          64,
+          64
+        ]
+      },
+      "y_reconstructor": {
+        "cnn_hidden": [
+          64,
+          64,
+          64,
+          64
+        ],
+        "cnn_in": 160,
+        "transformer_stage_dims": [
+          64,
+          64,
+          64,
+          64
+        ]
+      },
+      "y_token_encoder": {
+        "stage_dims": [
+          64,
+          64,
+          64,
+          64,
+          64
+        ]
+      },
+      "y_token_reconstructor": {
+        "stage_dims": [
+          64,
+          64,
+          64,
+          64,
+          64
+        ]
+      },
+      "y_token_predict": {
+        "stage_dims": [
+          64,
+          64,
+          64,
+          64,
+          64
+        ]
+      },
+      "y_predict_extra": {
+        "stage_dims": [
+          64,
+          64,
+          64,
+          64,
+          128,
+          128,
+          128,
+          128
+        ]
+      },
+      "y_cnn_kernel_size": 5,
+      "use_gated": true,
+      "dropout": 0.3
+    },
+    "SMALL8": {
+      "x_encoder": {
+        "layers": [
+          128,
+          128,
+          128,
+          128,
+          64,
+          64,
+          64,
+          64
+        ],
+        "bottleneck": 8,
+        "to_bottleneck_activation": "Linear"
+      },
+      "x_reconstructor": [
+        64,
+        64,
+        64,
+        64,
+        128,
+        128,
+        128,
+        128
+      ],
+      "x_reconstructor_output_activation": "ReLU",
+      "y_encoder": {
+        "bottleneck": 8,
+        "cnn_hidden": [
+          64,
+          64,
+          64,
+          64
+        ],
+        "cnn_out": 160,
+        "transformer_stage_dims": [
+          64,
+          64,
+          64,
+          64
+        ]
+      },
+      "y_predict_up": {
+        "cnn_hidden": [
+          64,
+          64,
+          64,
+          64
+        ],
+        "cnn_in": 160,
+        "transformer_stage_dims": [
+          64,
+          64,
+          64,
+          64
+        ]
+      },
+      "y_reconstructor": {
+        "cnn_hidden": [
+          64,
+          64,
+          64,
+          64
+        ],
+        "cnn_in": 160,
+        "transformer_stage_dims": [
+          64,
+          64,
+          64,
+          64
+        ]
+      },
+      "y_token_encoder": {
+        "stage_dims": [
+          64,
+          64,
+          64,
+          64,
+          64
+        ]
+      },
+      "y_token_reconstructor": {
+        "stage_dims": [
+          64,
+          64,
+          64,
+          64,
+          64
+        ]
+      },
+      "y_token_predict": {
+        "stage_dims": [
+          64,
+          64,
+          64,
+          64,
+          64
+        ]
+      },
+      "y_predict_extra": {
+        "stage_dims": [
+          64,
+          64,
+          64,
+          64,
+          128,
+          128,
+          128,
+          128
+        ]
+      },
+      "y_cnn_kernel_size": 5,
+      "use_gated": true,
+      "dropout": 0.3
+    },
+    "SMALL16": {
+      "x_encoder": {
+        "layers": [
+          128,
+          128,
+          128,
+          128,
+          64,
+          64,
+          64,
+          64
+        ],
+        "bottleneck": 16,
+        "to_bottleneck_activation": "Linear"
+      },
+      "x_reconstructor": [
+        64,
+        64,
+        64,
+        64,
+        128,
+        128,
+        128,
+        128
+      ],
+      "x_reconstructor_output_activation": "ReLU",
+      "y_encoder": {
+        "bottleneck": 16,
+        "cnn_hidden": [
+          64,
+          64,
+          64,
+          64
+        ],
+        "cnn_out": 160,
+        "transformer_stage_dims": [
+          64,
+          64,
+          64,
+          64
+        ]
+      },
+      "y_predict_up": {
+        "cnn_hidden": [
+          64,
+          64,
+          64,
+          64
+        ],
+        "cnn_in": 160,
+        "transformer_stage_dims": [
+          64,
+          64,
+          64,
+          64
+        ]
+      },
+      "y_reconstructor": {
+        "cnn_hidden": [
+          64,
+          64,
+          64,
+          64
+        ],
+        "cnn_in": 160,
+        "transformer_stage_dims": [
+          64,
+          64,
+          64,
+          64
+        ]
+      },
+      "y_token_encoder": {
+        "stage_dims": [
+          64,
+          64,
+          64,
+          64,
+          64
+        ]
+      },
+      "y_token_reconstructor": {
+        "stage_dims": [
+          64,
+          64,
+          64,
+          64,
+          64
+        ]
+      },
+      "y_token_predict": {
+        "stage_dims": [
+          64,
+          64,
+          64,
+          64,
+          64
+        ]
+      },
+      "y_predict_extra": {
+        "stage_dims": [
+          64,
+          64,
+          64,
+          64,
+          128,
+          128,
+          128,
+          128
+        ]
+      },
+      "y_cnn_kernel_size": 5,
+      "use_gated": true,
+      "dropout": 0.3
+    },
+    "BIG": {
+      "x_encoder": {
+        "layers": [
+          512,
+          512,
+          256,
+          256,
+          128,
+          128,
+          64,
+          64
+        ],
+        "bottleneck": 16,
+        "to_bottleneck_activation": "ReLU"
+      },
+      "x_reconstructor": [
+        64,
+        64,
+        128,
+        128,
+        256,
+        256,
+        512,
+        512
+      ],
+      "x_reconstructor_output_activation": "Softplus",
+      "y_encoder": {
+        "bottleneck": 16,
+        "cnn_hidden": [
+          128,
+          128,
+          128,
+          128
+        ],
+        "cnn_out": 160,
+        "transformer_stage_dims": [
+          64,
+          64,
+          64,
+          64
+        ]
+      },
+      "y_predict_up": {
+        "cnn_hidden": [
+          128,
+          128,
+          128,
+          128
+        ],
+        "cnn_in": 160,
+        "transformer_stage_dims": [
+          64,
+          64,
+          64,
+          64
+        ]
+      },
+      "y_reconstructor": {
+        "cnn_hidden": [
+          128,
+          128,
+          128,
+          128
+        ],
+        "cnn_in": 160,
+        "transformer_stage_dims": [
+          64,
+          64,
+          64,
+          64
+        ]
+      },
+      "y_token_encoder": {
+        "stage_dims": [
+          128,
+          128,
+          128,
+          64,
+          64,
+          64
+        ]
+      },
+      "y_token_reconstructor": {
+        "stage_dims": [
+          64,
+          64,
+          64,
+          128,
+          128,
+          128
+        ]
+      },
+      "y_token_predict": {
+        "stage_dims": [
+          64,
+          64,
+          64,
+          128,
+          128,
+          128
+        ]
+      },
+      "y_predict_extra": {
+        "stage_dims": [
+          64,
+          64,
+          128,
+          128,
+          256,
+          256,
+          512,
+          512
+        ]
+      },
+      "y_cnn_kernel_size": 5,
+      "use_gated": false,
+      "dropout": 0.3
+    },
+    "BIG64": {
+      "x_encoder": {
+        "layers": [
+          512,
+          512,
+          256,
+          256,
+          128,
+          128,
+          64,
+          64
+        ],
+        "bottleneck": 64,
+        "to_bottleneck_activation": "ReLU"
+      },
+      "x_reconstructor": [
+        64,
+        64,
+        128,
+        128,
+        256,
+        256,
+        512,
+        512
+      ],
+      "x_reconstructor_output_activation": "Softplus",
+      "y_encoder": {
+        "bottleneck": 64,
+        "cnn_hidden": [
+          128,
+          128,
+          128,
+          128
+        ],
+        "cnn_out": 160,
+        "transformer_stage_dims": [
+          64,
+          64,
+          64,
+          64
+        ]
+      },
+      "y_predict_up": {
+        "cnn_hidden": [
+          128,
+          128,
+          128,
+          128
+        ],
+        "cnn_in": 160,
+        "transformer_stage_dims": [
+          64,
+          64,
+          64,
+          64
+        ]
+      },
+      "y_reconstructor": {
+        "cnn_hidden": [
+          128,
+          128,
+          128,
+          128
+        ],
+        "cnn_in": 160,
+        "transformer_stage_dims": [
+          64,
+          64,
+          64,
+          64
+        ]
+      },
+      "y_token_encoder": {
+        "stage_dims": [
+          128,
+          128,
+          128,
+          64,
+          64,
+          64
+        ]
+      },
+      "y_token_reconstructor": {
+        "stage_dims": [
+          64,
+          64,
+          64,
+          128,
+          128,
+          128
+        ]
+      },
+      "y_token_predict": {
+        "stage_dims": [
+          64,
+          64,
+          64,
+          128,
+          128,
+          128
+        ]
+      },
+      "y_predict_extra": {
+        "stage_dims": [
+          64,
+          64,
+          128,
+          128,
+          256,
+          256,
+          512,
+          512
+        ]
+      },
+      "y_cnn_kernel_size": 5,
+      "use_gated": false,
+      "dropout": 0.3
+    }
+  },
+  "ring": {
+    "epochs": 10000,
+    "epochs_topology": 2000,
+    "weight_decay": 0.0005,
+    "sim_weight": 10,
+    "topology_threshold": null,
+    "topo_weight": 100,
+    "topo_h0_weight": 0,
+    "topo_smooth_weight": 0.1,
+    "gamma": 3.0,
+    "persistence_power": 0,
+    "birth_decay": 0,
+    "zero_penalty": 10,
+    "huber_delta": 2,
+    "skip_zero_threshold": 1,
+    "topo_degenerate_bandwidth": 5,
+    "topo_degenerate_threshold": 0.05,
+    "lr_decay": {
+      "step_size": 5000,
+      "gamma": 0.5
+    },
+    "lr_warm": {
+      "warm_steps": 100
+    },
+    "model_save": {
+      "normal": 100,
+      "topo": 500
+    },
+    "external_validation": {
+      "enabled": true
+    }
+  }
+}
